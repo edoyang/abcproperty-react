@@ -1,0 +1,428 @@
+.home{
+    >*{
+        margin-bottom: 150px;
+    }
+    .hero{
+        padding: var(--padding-lg);
+        display: flex;
+        justify-content: space-between;
+
+        .left{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            justify-content: center;
+
+            h1{
+                font-size: 57px;
+            }
+
+            p{
+                width: 380px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+            }
+
+            .container{
+                height: 69px;
+
+                .property-search{
+                    display: flex;
+                    background-color: var(--light-blue);
+                    padding: 1rem;
+                    gap: 15px;
+                    align-items: center;
+                    width: max-content;
+                    position: absolute;
+
+                    @media screen and (max-width: 600px){
+                        margin-top: 50px;
+                        position: relative;
+                        width: 100%;
+                        display: grid;
+                        place-items: center;
+                        grid-template-areas: 
+                        "b"
+                        "a"
+                        "c";
+                        
+                        > .dropdown-container , >.dropdown-container .dropdown-btn , > .dropdown-container .dropdown-content, > .search-input, > .search-input input{
+                            width: 100%;
+                            display: flex;
+                        }
+                        > .dropdown-container{
+                            grid-area: a;
+                        }
+
+                        > .search-input{
+                            grid-area: b;
+                        }
+
+                        > .btn-primary{
+                            grid-area: c;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right{
+            display: flex;
+            justify-content: end;
+
+            @media screen and (max-width: 1025px){
+                img{
+                    width:45vw;
+                }
+            }
+
+            @media screen and (max-width: 768px){
+                display: none;
+            }
+        }
+
+
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+            gap: 50px;
+            text-align: center;
+
+            .pre-line{
+                white-space: normal;
+            }
+
+            .left {
+
+                p{
+                    width: 100%;
+                }
+
+                .container{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+    }
+
+    .top-offers{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--light-blue);
+        gap: 20px;
+
+        > .container{
+            display: flex;
+            justify-content: space-between;
+            padding: var(--padding-lg);
+
+            .left, .right{
+                flex: 1;
+            }
+
+            .left{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                h1{
+                    font-size: 60px;
+                }
+
+                p{
+                    width: 450px;
+
+                    @media screen and (max-width: 768px){
+                        width: 100%;
+                        
+                    }
+                }
+            }
+            
+
+            .right{
+                display: flex;
+                justify-content: flex-end;
+                margin-top: auto;
+            }
+
+        }
+
+        .indicator{
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+            padding: var(--padding-lg);
+
+            .indicator-bar{
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                span{
+                    display: block;
+                    width: 25%;
+                    height: 2px;
+                    background-color: var(--indicator);
+                }
+
+                .active{
+                    background-color: var(--blue);
+                }
+
+            }
+
+            .buttons{
+                display: flex;
+                gap: 25px;
+                
+                button{
+                    border: none;
+
+                    &:disabled, [disabled]{
+                        background-color: var(--indicator);
+                        cursor: not-allowed;
+                    }
+                }
+                
+                .left-arrow, .right-arrow{
+                    background-color: var(--blue);
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    width: 65px;
+                    height: 65px;
+
+                    img{
+                        width: 12px;
+                    }
+                }
+
+                .left-arrow{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .about-us{
+        display: flex;
+        padding: var(--padding-lg);
+        justify-content: center;
+        align-items: center;
+
+        .left{
+            flex: 1;
+        }
+
+        .right{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            h1{
+                font-size: 70px;
+            }
+
+            p{
+                width: 450px;
+            }
+        }
+    }
+
+    .our-team{
+        padding: var(--padding-lg);
+
+        .container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 50px;
+
+            .team-card{
+                height: 380px;
+                width: 350px;
+                box-shadow: 5px 5px 10px 5px var(--light-blue);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                justify-content: center;
+                text-align: center;
+
+                .image-container{
+                    border-radius: 50%;
+                    height: 200px;
+                    width: 200px;
+                    overflow: hidden;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .our-team-card{
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                justify-content: center;
+
+                h1{
+                    font-size: 60px;
+                }
+
+            }
+
+            @media screen and (max-width: 768px){
+                grid-template-columns: auto auto;
+                place-content: center;
+                .team-card{
+                    width: 200px;
+                    height: 200px;
+                    justify-content: space-around;
+
+                    .image-container{
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                    @media screen and (max-width: 500px){
+                        width: 100px;
+                        height: 100px;
+
+                        .image-container{
+                            display: none;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .references{
+        display: flex;
+        flex-direction: column;
+        padding: var(--padding-lg);
+        gap: 30px;
+
+        .testimonial-container{
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+
+            @media screen and (max-width: 900px){
+                flex-direction: column;
+                gap: 50px;
+                
+            }
+
+
+            .testimonial-card{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                flex: 1;
+                background-color: var(--light-blue);
+                padding: var(--padding-lg);
+                justify-content: space-between;
+                color: var(--dark-blue);
+
+
+                .text{
+                    display: flex;
+                    gap: 10px;
+                    color: var(--dark-blue);
+
+                    p{
+                        font-size: 18px;
+                    }
+                    
+                    .merriweather{
+                        font-size: 80px;
+                        font-weight: 700;
+                        font-family: 'Merriweather', serif;
+                        color: var(--dark-blue);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+@media screen and (max-width: 1200px){
+    .home{
+
+        .about-us{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .left {
+                width: 100%;
+
+                >img{
+                    width: 100%;
+                }
+            }
+
+            .right{
+                width: 100%;
+                
+                h1, p{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .our-team .container{
+            grid-template-columns: auto auto;
+            place-content: center;
+            .our-team-card{
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .home{
+
+        .top-offers{
+
+            > .container{
+                flex-direction: column;
+                gap: 30px;
+                justify-content: center;
+
+                .right{
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .indicator{
+                flex-direction: column;
+                gap: 30px;
+
+                .buttons{
+                    display: none;
+                }
+            }
+        }
+    }
+}
